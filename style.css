@@ -1,0 +1,113 @@
+.index-header {
+    background-color: #333;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.index-nav ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #333;
+    margin: 0;
+}
+
+.index-nav  {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #333;
+    margin: 0;
+}
+
+.index-nav li a {
+    color: white;
+}
+
+.index-nav ul li a {
+    padding: 10px 20px;
+    color: white;
+}
+
+.index-main .about-us {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+}
+
+.shop-now a button {
+    color: white;
+    background-color: #4caf50;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.customer-reviews {
+    display: flex;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    flex-direction: column;
+}
+
+.index-footer {
+    background-color: #333;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+}
+
+.index-footer p {
+    color: white;
+}
+
+.login-form {
+    display: flex;
+    /* Align content vertically and horizontally */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.login-form label {
+    color: black;
+    display: block;
+    margin: 10px;
+
+}
+
+.login-form a {
+    color: #007BFF;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
+
+.login-form input {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+.login-form button {
+    color: #4CAF50;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    opacity: 0.5;
+}
