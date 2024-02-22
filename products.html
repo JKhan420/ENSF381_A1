@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta name="description" content="Assignment 1 ENSF381">
     <meta name="keywords" content="HTML Web Development">
-    <meta name="author" content="Junaid Khan, Joshua Geng">
+    <meta name="author" content="Junaid Khan, Joshua Geng (UCID:)">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <title>Products</title>
 </head>
 <body>
-    <header>
+    <header class="index-header">
         <!-- Logo and website name go here -->
-        <h3><img width="40 px" src="images/logo.jpg">paidionerastas.com</h3>
+        <h3><img width="40 px" src="images/logo.jpg"></h3>
+        <h3>paidionerastas.com</h3>
     </header>
-    <div>
+    <div class="index-nav">
         <!-- Navigation links go here -->
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -29,15 +31,15 @@
         <section class="product-listing">
             <h2>Products:</h2>
             <p>Our T-shirts are made with high-quality materials while still being affordable!</p>
-            <table width = "1000px", cellspacing="20">
+            <table class="product-table" width = "1000px", cellspacing="20">
                 <tr>
-                    <th>
+                    <th class="product-th">
                         <img src="images/tshirt1.jpg" width="250">
                         <h4>The <i>Original</i></h4>
                         <p><button>Add to Cart</button></p>
                         <b>Price:$9.99</b>
                     </th>
-                    <th>
+                    <th class="product-th">
                         <img src="images/tshirt2.jpg" width="250">
                         <h4>15 Year Anniversary</h4>
                         <p><button>Add to Cart</button></p>
@@ -45,13 +47,13 @@
                     </th>
                 </tr>
                 <tr>
-                    <th>                        
+                    <th class="product-th">                        
                         <img src="images/tshirt3.jpg" width="250">
                         <h4>Double the Cake</h4>
                         <p><button>Add to Cart</button></p>
                         <b>Price:$9.99</b>
                     </th>
-                    <th>                        
+                    <th class="product-th">                        
                         <img src="images/tshirt4.jpg" width="250">
                         <h4>Triple the Sweetness</h4>
                         <p><button>Add to Cart</button></p>
@@ -59,9 +61,9 @@
                     </th>
                 </tr>
             </table>
-        </section>
+        </section>+
     </main>
-    <footer>
+    <footer class="index-footer">
         <!-- Copyright notice goes here -->
         <p>
             © Paidionerastas All Rights Reserved. 

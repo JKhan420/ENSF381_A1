@@ -1,0 +1,213 @@
+/*Default values to get rid of any whiteboxes*/
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  /*index Section*/
+.index-header {
+    background-color: #333;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+}
+
+.index-nav ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.index-nav  {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #333;
+    margin: 0;
+}
+
+.index-nav li a {
+    color: white;
+}
+
+.index-nav ul li a {
+    padding: 10px 20px;
+    color: white;
+}
+
+.index-main .about-us {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+}
+
+.shop-now{
+    text-align: left;
+    margin: 20px;
+}
+
+.shop-now a button {
+    color: white;
+    background-color: #4caf50;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.customer-reviews {
+    display: flex;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    flex-direction: column;
+}
+
+.index-footer {
+    background-color: #333;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+}
+
+.index-footer p {
+    text-align: center;
+    color: white;
+}
+
+/*Login Section*/
+.login-form {
+    display: flex;
+    /* Align content vertically and horizontally */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.login-form label {
+    color: black;
+    display: block;
+    margin: 10px;
+
+}
+
+.login-form a {
+    color: #007BFF;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
+
+.login-form input {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+.login-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    opacity: 0.5;
+}
+
+.login-form button:hover{
+    background-color: #45A049;
+    opacity: 1.0;
+}
+
+
+/* Contacts Section */
+.contact-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.contact-method {
+    background-color: #ddd;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 10px;
+}
+
+.contact-method li a:hover {
+    color: #007BFF;
+}
+
+/*Products Section*/
+.product-listing {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+}
+
+.product-table {
+    width: 100%;
+}
+
+.product-th {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product-th img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-th b {
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.product-th:hover{
+    background-color: white;
+}
+
+.product-th button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-th button:hover {
+    background-color: #45A049;
+}

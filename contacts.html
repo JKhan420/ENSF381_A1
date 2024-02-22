@@ -7,14 +7,16 @@
     <meta name="keywords" content="HTML Web Development">
     <meta name="author" content="Junaid Khan, Joshua Geng">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <title>Contacts</title>
 </head>
 <body>
-    <header>
+    <header class="index-header">
         <!-- Logo and website name go here -->
-        <h3><img width="40 px" src="images/logo.jpg">paidionerastas.com</h3>
+        <h3><img width="40 px" src="images/logo.jpg"></h3>
+        <h3>paidionerastas.com</h3>
     </header>
-    <div>
+    <div class="index-nav">
         <!-- Navigation links go here -->
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -23,14 +25,15 @@
             <li><a href="contacts.html">Contacts</a></li>
         </ul>
     </div>
-    <main>
+    <main class="contact-main">
         <!-- Contact Information Section -->
         <section class="contact-info">
             <!-- Message to Customers -->
             <b><i><font size="+1">Message to Customers:</font></i></b>
             <p>Welcome to Paidionerastas! Feel free to reach out to us for any inquiries or assistance. For more information regarding returns and refunds, please refer to our phone number!</p>
-    
-            <!-- Email Address -->
+            
+            <div class="contact-method">
+                <!-- Email Address -->
             <p>
                 <label><b>Email:</b></label>
                 <a href="mailto:info@paidionerastas.com">info@paidionerastas.com</a>
@@ -39,7 +42,7 @@
             <!-- Phone Number -->
             <p>
                 <label><b>Phone:</b></label>
-                (403)-123-4567
+                +1 (403)-123-4567
             </p>
     
             <!-- Social Media Links -->
@@ -50,9 +53,11 @@
                     <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
                 </ul>
             </p>
+            </div>
+
         </section>
     </main>    
-    <footer>
+    <footer class="index-footer">
         <!-- Copyright notice goes here -->
         <p>
             © Paidionerastas All Rights Reserved. 
