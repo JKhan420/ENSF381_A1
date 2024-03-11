@@ -211,3 +211,54 @@ html, body {
 .product-th button:hover {
     background-color: #45A049;
 }
+
+/*Signup form Section*/
+.signup-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.signup-form label {
+    color: black;
+    display: block;
+    margin: 10px;
+}
+
+.signup-form input {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.signup-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    opacity: 0.5;
+}
+
+.signup-form button:hover {
+    background-color: #45A049;
+    opacity: 1.0;
+}
+
+#messageBox {
+    display: none;
+    border: 2px solid #f9f9f9;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 20px;
+}
+
+#messageBox p {
+    margin: 0; /* Remove default margin */
+}

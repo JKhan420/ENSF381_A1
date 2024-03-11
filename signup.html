@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add meta tags, title, and link to styles.css here -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Assignment 3 ENSF381">
+    <meta name="keywords" content="HTML Web Development">
+    <meta name="author" content="Junaid Khan, Joshua Geng">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Signup Page</title>
+</head>
+<body>
+    <header class="index-header">
+        <!-- Logo and website name go here -->
+        <h3><img width="40 px" src="images/logo.jpg"></h3>
+        <h3>paidionerastas.com</h3>
+    </header>
+    <div class="index-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li> 
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+    <main>
+        <!-- Signup Form Section -->
+        <section class="signup-form">
+            <!-- Username Field -->
+            <label>Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required pattern="[A-Za-z][A-Za-z0-9_-]{3,19}">
+            <br>
+            <!-- Password Field -->
+            <label>Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?/~]).{8,}$">
+            <br>
+            <!-- Confirm Password Field -->
+            <label>Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+            <br>
+            <!-- Email Field -->
+            <label>Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <br>
+            <!-- Signup Button -->
+            <button id="signupButton">Signup</button>
+            <br>
+            <!-- Link to Login Page -->
+            <a href="login.html">Already have an account? Login here</a>
+        </section>
+    </main>
+    <!-- Message Box Container -->
+    <div id="messageBox">
+        <p></p>
+    </div>
+    <footer class='index-footer'>
+        <!-- Copyright notice goes here -->
+        <p>
+            © Paidionerastas All Rights Reserved. 
+            <br>
+            <i>Unauthorized duplication is a violation of applicable laws.</i>
+        </p>
+    </footer>
+    <script>
+        document.getElementById('signupButton').addEventListener('click', function (event) {
+            // Prevent form submission
+            event.preventDefault();
+    
+            // Reset error messages
+            document.getElementById('messageBox').style.display = 'none';
+            document.getElementById('messageBox').getElementsByTagName('p')[0].innerText = '';
+    
+            // Get form input values
+            var username = document.getElementById('username').value.trim();
+            var password = document.getElementById('password').value.trim();
+            var confirmPassword = document.getElementById('confirm_password').value.trim();
+            var email = document.getElementById('email').value.trim();
+    
+            // Regular expressions for validation
+            var usernameRegex = /^[A-Za-z][A-Za-z0-9_-]{3,19}$/;
+            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?/~]).{8,}$/;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+            // Error messages array
+            var errorMessages = [];
+    
+            // Validate Username
+            if (!usernameRegex.test(username)) {
+                errorMessages.push('Check Username');
+            }
+    
+            // Validate Password
+            if (!passwordRegex.test(password)) {
+                errorMessages.push('Check Password');
+            }
+    
+            // Validate Confirm Password
+            if (password !== confirmPassword) {
+                errorMessages.push('Passwords Dont Match');
+            }
+    
+            // Validate Email
+            if (!emailRegex.test(email)) {
+                errorMessages.push('Check Email');
+            }
+    
+            // Display errors if any
+            if (errorMessages.length > 0) {
+                displayError(errorMessages.join('<br>'));
+            } else {
+                // If all validations pass, display success message 
+                displaySuccess('Signup successful!');
+            }
+        });
+    
+        function displayError(message) {
+            var messageBox = document.getElementById('messageBox');
+            messageBox.style.display = 'block';
+            messageBox.getElementsByTagName('p')[0].innerHTML = message;
+        }
+    
+        function displaySuccess(message) {
+        var messageBox = document.getElementById('messageBox');
+        messageBox.style.display = 'block';
+        messageBox.getElementsByTagName('p')[0].innerHTML = '<span style="color: green;">' + message + '</span>';
+        }
+    </script>
+</body>
+</html>
