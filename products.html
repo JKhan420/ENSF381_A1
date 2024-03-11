@@ -35,13 +35,13 @@
                     <th class="product-th">
                         <img src="images/tshirt1.jpg" width="250">
                         <h4>The <i>Original</i></h4>
-                        <p><button>Add to Cart</button></p>
+                        <p><button onclick="originalCartDisplay()">Add to Cart</button></p>
                         <b>Price:$9.99</b>
                     </th>
                     <th class="product-th">
                         <img src="images/tshirt2.jpg" width="250">
                         <h4>15 Year Anniversary</h4>
-                        <p><button>Add to Cart</button></p>
+                        <p><button onclick="fifteenCartDisplay()">Add to Cart</button></p>
                         <b>Price:$15.00</b>
                     </th>
                 </tr>
@@ -49,13 +49,13 @@
                     <th class="product-th">                        
                         <img src="images/tshirt3.jpg" width="250">
                         <h4>Double the Cake</h4>
-                        <p><button>Add to Cart</button></p>
+                        <p><button onclick="doubleCartDisplay()">Add to Cart</button></p>
                         <b>Price:$9.99</b>
                     </th>
                     <th class="product-th">                        
                         <img src="images/tshirt4.jpg" width="250">
                         <h4>Triple the Sweetness</h4>
-                        <p><button>Add to Cart</button></p>
+                        <p><button onclick="tripleCartDisplay()">Add to Cart</button></p>
                         <b>Price:$9.99</b>
                     </th>
                 </tr>
@@ -63,13 +63,13 @@
                     <th class="product-th">
                         <img src="images/tshirt5.jpg" width="250">
                         <h4>Choco Time</h4>
-                        <p><button>Add to Cart</button></p>
+                        <p><button onclick="chocoCartDisplay()">Add to Cart</button></p>
                         <b>Price:$9.99</b>
                     </th>
                     <th class="product-th">
                         <img src="images/tshirt6.jpg" width="250">
                         <h4>Tango Time</h4>
-                        <p><button>Add to Cart</button></p>
+                        <p><button onclick="tangoCartDisplay()">Add to Cart</button></p>
                         <b>Price:$9.99</b>
                     </th>
                 </tr>
@@ -77,20 +77,504 @@
                     <th class="product-th">                        
                         <img src="images/tshirt7.jpg" width="250">
                         <h4>Berry Special</h4>
-                        <p><button>Add to Cart</button></p>
+                        <p><button onclick="berryCartDisplay()">Add to Cart</button></p>
                         <b>Price:$9.99</b>
                     </th>
                     <th class="product-th">                        
                         <img src="images/tshirt8.jpg" width="250">
                         <h4><i>Le plain</i></h4>
-                        <p><button>Add to Cart</button></p>
+                        <p><button onclick="plainCartDisplay()">Add to Cart</button></p>
                         <b>Price:$9.99</b>
                     </th>
                 </tr>
             </table>
         </section>+
     </main>
-    <footer class="index-footer">
+    <script>
+        //Create counters for each product
+        var quantityoriginal = 1;
+        var quantityfifteen = 1;
+        var quantitydouble = 1;
+        var quantitytriple = 1;
+        var quantitychoco = 1;
+        var quantitytango = 1;
+        var quantityberry = 1;
+        var quantityplain = 1;
+        
+        //Create cart function for original
+        function originalCartDisplay() {
+            var cartFlexBox = document.getElementById('original');
+            var productName;
+
+            if (!cartFlexBox) {
+                cartFlexBox = document.createElement('div');
+
+                //Flexbox styling
+                cartFlexBox.style.display = 'flex';
+                cartFlexBox.style.gap = '20px';
+                cartFlexBox.style.justifyContent = 'center';
+                cartFlexBox.style.flexWrap = 'wrap';
+                cartFlexBox.style.padding = '10px';
+                cartFlexBox.style.backgroundColor = 'lightgray';
+
+                productName = document.createElement('p');
+                productName.textContent = `Le Original - Price:$9.99 - ${quantityoriginal}`;
+                cartFlexBox.appendChild(productName);
+                cartFlexBox.id = 'original';
+
+                var remove = document.createElement('button');
+                remove.textContent = 'Remove';
+                remove.style.padding = '5px 10px';
+                remove.style.backgroundColor = 'lightgreen';
+                remove.style.color = 'white';
+                remove.style.border = 'none';
+                remove.style.borderRadius = '5px';
+                remove.style.fontSize = '12px';
+                remove.style.cursor = 'pointer';
+                remove.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#ff0000';
+                });
+                remove.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = 'lightgreen';
+                });
+                remove.onclick = function() {
+                    if (quantityoriginal > 0) { // Ensure quantity doesn't go negative
+                        quantityoriginal--;
+                        // Update the display
+                        productName.textContent = `Le Original - Price:$9.99 - ${quantityoriginal}`;
+                    } else {
+                        cartFlexBox.remove();
+                    }
+                };
+
+                cartFlexBox.append(remove);
+
+                var footer = document.getElementById('footer');
+                footer.parentNode.insertBefore(cartFlexBox, footer);
+            } else {
+                // Increase quantity only if cartFlexBox already exists
+                quantityoriginal++;
+            }
+
+            // Make sure productName is correctly referenced when updating
+            productName = document.getElementById('original').querySelector('p');
+            productName.textContent = `Le Original - Price:$9.99 - ${quantityoriginal}`;
+        }
+
+        //Create cart function for fifteen
+        function fifteenCartDisplay() {
+            var cartFlexBox = document.getElementById('fifteen');
+            var productName;
+
+            if (!cartFlexBox) {
+                cartFlexBox = document.createElement('div');
+
+                //Flexbox styling
+                cartFlexBox.style.display = 'flex';
+                cartFlexBox.style.gap = '20px';
+                cartFlexBox.style.justifyContent = 'center';
+                cartFlexBox.style.flexWrap = 'wrap';
+                cartFlexBox.style.padding = '10px';
+                cartFlexBox.style.backgroundColor = 'lightgray';
+
+                productName = document.createElement('p');
+                productName.textContent = `15 Year Anniversary - Price:$15.00 - ${quantityfifteen}`;
+                cartFlexBox.appendChild(productName);
+                cartFlexBox.id = 'fifteen';
+
+                var remove = document.createElement('button');
+                remove.textContent = 'Remove';
+                remove.style.padding = '5px 10px'; 
+                remove.style.backgroundColor = 'lightgreen'; 
+                remove.style.color = 'white'; 
+                remove.style.border = 'none'; 
+                remove.style.borderRadius = '5px'; 
+                remove.style.fontSize = '12px'; 
+                remove.style.cursor = 'pointer'; 
+                remove.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#ff0000'; 
+                });
+                remove.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = 'lightgreen'; 
+                }); 
+                remove.onclick = function() {
+                    if (quantityfifteen > 0) {
+                        quantityfifteen--; 
+                        productName.textContent = `15 Year Anniversary - Price:$15.00 - ${quantityfifteen}`;
+                        if (quantityfifteen === 0) {
+                            cartFlexBox.remove();
+                        }
+                    }
+                };
+
+                cartFlexBox.append(remove);
+
+                var footer = document.getElementById('footer');
+                footer.parentNode.insertBefore(cartFlexBox, footer);
+            } else {
+                // Increase quantity only if cartFlexBox already exists
+                quantityfifteen++;
+                productName = document.getElementById('fifteen').querySelector('p');
+                productName.textContent = `15 Year Anniversary - Price:$15.00 - ${quantityfifteen}`;
+            }
+        }
+
+        //Create cart function for double
+        function doubleCartDisplay() {
+            var cartFlexBox = document.getElementById('double');
+            var productName;
+
+            if (!cartFlexBox) {
+                cartFlexBox = document.createElement('div');
+
+                //Flexbox styling
+                cartFlexBox.style.display = 'flex';
+                cartFlexBox.style.gap = '20px';
+                cartFlexBox.style.justifyContent = 'center';
+                cartFlexBox.style.flexWrap = 'wrap';
+                cartFlexBox.style.padding = '10px';
+                cartFlexBox.style.backgroundColor = 'lightgray';
+
+                productName = document.createElement('p');
+                productName.textContent = `Double the Cake - Price:$9.99 - ${quantitydouble}`;
+                cartFlexBox.appendChild(productName);
+                cartFlexBox.id = 'double';
+
+                var remove = document.createElement('button');
+                remove.textContent = 'Remove';
+                remove.style.padding = '5px 10px'; 
+                remove.style.backgroundColor = 'lightgreen'; 
+                remove.style.color = 'white'; 
+                remove.style.border = 'none'; 
+                remove.style.borderRadius = '5px'; 
+                remove.style.fontSize = '12px'; 
+                remove.style.cursor = 'pointer'; 
+                remove.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#ff0000'; 
+                });
+                remove.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = 'lightgreen'; 
+                }); 
+                remove.onclick = function() {
+                    if (quantitydouble > 0) {
+                        quantitydouble--; 
+                        productName.textContent = `Double the Cake - Price:$9.99 - ${quantitydouble}`;
+                        if (quantitydouble === 0) {
+                            cartFlexBox.remove();
+                        }
+                    }
+                };
+
+                cartFlexBox.append(remove);
+
+                var footer = document.getElementById('footer');
+                footer.parentNode.insertBefore(cartFlexBox, footer);
+            } else {
+                // Increase quantity only if cartFlexBox already exists
+                quantitydouble++;
+                productName = document.getElementById('double').querySelector('p');
+                productName.textContent = `Double the Cake - Price:$9.99 - ${quantitydouble}`;
+            }
+        }
+
+        
+        //Create cart function for triple
+        function tripleCartDisplay() {
+            var cartFlexBox = document.getElementById('triple');
+            var productName;
+
+            if(!cartFlexBox) {
+                cartFlexBox = document.createElement('div');
+
+                //Flexbox styling
+                cartFlexBox.style.display = 'flex';
+                cartFlexBox.style.gap = '20px'
+                cartFlexBox.style.justifyContent = 'center'
+                cartFlexBox.style.flexWrap = 'wrap';
+                cartFlexBox.style.padding = '10px';
+                cartFlexBox.style.backgroundColor = 'lightgray';
+
+                productName = document.createElement('p');
+                productName.textContent = `Triple the Sweetness - Price:$9.99 - ${quantitytriple}`;
+                cartFlexBox.appendChild(productName);
+                cartFlexBox.id = 'triple';
+                productbr = document.createElement('br')
+                cartFlexBox.append(productbr)
+
+                //Create remove button
+                var remove = document.createElement('button')
+                remove.textContent = 'Remove'
+                remove.style.padding = '5px 10px'; 
+                remove.style.backgroundColor = 'lightgreen'; 
+                remove.style.color = 'white'; 
+                remove.style.border = 'none'; 
+                remove.style.borderRadius = '5px'; 
+                remove.style.fontSize = '12px'; 
+                remove.style.cursor = 'pointer'; 
+                remove.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#ff0000'; 
+                });
+                remove.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = 'lightgreen'; 
+                }); 
+                remove.onclick = function() {
+                    if (quantitytriple > 0) { // Ensure quantity doesn't go negative
+                        quantitytriple--; 
+                        // Update the display
+                        productName.textContent = `Triple the Sweetness - Price:$9.99 - ${quantitytriple}`;
+                    }
+                    else {
+                        cartFlexBox.remove()
+                    }
+                };
+
+                cartFlexBox.append(remove)
+
+                var footer = document.getElementById('footer');
+                footer.parentNode.insertBefore(cartFlexBox, footer);
+            } else {
+                // Increase quantity only if cartFlexBox already exists
+                quantitytriple++;
+            }
+            
+            // Make sure productName is correctly referenced when updating
+            productName = document.getElementById('triple').querySelector('p');
+            productName.textContent = `Triple the Sweetness - Price:$9.99 - ${quantitytriple}`;
+        }
+
+        //Create cart function for choco
+        function chocoCartDisplay() {
+            var cartFlexBox = document.getElementById('choco');
+            var productName;
+
+            if (!cartFlexBox) {
+                cartFlexBox = document.createElement('div');
+
+                //Flexbox styling
+                cartFlexBox.style.display = 'flex';
+                cartFlexBox.style.gap = '20px';
+                cartFlexBox.style.justifyContent = 'center';
+                cartFlexBox.style.flexWrap = 'wrap';
+                cartFlexBox.style.padding = '10px';
+                cartFlexBox.style.backgroundColor = 'lightgray';
+
+                productName = document.createElement('p');
+                productName.textContent = `Choco Time - Price:$9.99 - ${quantitychoco}`;
+                cartFlexBox.appendChild(productName);
+                cartFlexBox.id = 'choco';
+
+                var remove = document.createElement('button');
+                remove.textContent = 'Remove';
+                remove.style.padding = '5px 10px'; 
+                remove.style.backgroundColor = 'lightgreen'; 
+                remove.style.color = 'white'; 
+                remove.style.border = 'none'; 
+                remove.style.borderRadius = '5px'; 
+                remove.style.fontSize = '12px'; 
+                remove.style.cursor = 'pointer'; 
+                remove.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#ff0000'; 
+                });
+                remove.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = 'lightgreen'; 
+                }); 
+                remove.onclick = function() {
+                    if (quantitychoco > 0) {
+                        quantitychoco--; 
+                        productName.textContent = `Choco Time - Price:$9.99 - ${quantitychoco}`;
+                        if (quantitychoco === 0) {
+                            cartFlexBox.remove();
+                        }
+                    }
+                };
+
+                cartFlexBox.append(remove);
+
+                var footer = document.getElementById('footer');
+                footer.parentNode.insertBefore(cartFlexBox, footer);
+            } else {
+                // Increase quantity only if cartFlexBox already exists
+                quantitychoco++;
+                productName = document.getElementById('choco').querySelector('p');
+                productName.textContent = `Choco Time - Price:$9.99 - ${quantitychoco}`;
+            }
+        }
+
+        //Create cart function for tango
+        function tangoCartDisplay() {
+            var cartFlexBox = document.getElementById('tango');
+            var productName;
+
+            if (!cartFlexBox) {
+                cartFlexBox = document.createElement('div');
+
+                //Flexbox styling
+                cartFlexBox.style.display = 'flex';
+                cartFlexBox.style.gap = '20px';
+                cartFlexBox.style.justifyContent = 'center';
+                cartFlexBox.style.flexWrap = 'wrap';
+                cartFlexBox.style.padding = '10px';
+                cartFlexBox.style.backgroundColor = 'lightgray';
+
+                productName = document.createElement('p');
+                productName.textContent = `Tango Time - Price:$9.99 - ${quantitytango}`;
+                cartFlexBox.appendChild(productName);
+                cartFlexBox.id = 'tango';
+
+                var remove = document.createElement('button');
+                remove.textContent = 'Remove';
+                remove.style.padding = '5px 10px'; 
+                remove.style.backgroundColor = 'lightgreen'; 
+                remove.style.color = 'white'; 
+                remove.style.border = 'none'; 
+                remove.style.borderRadius = '5px'; 
+                remove.style.fontSize = '12px'; 
+                remove.style.cursor = 'pointer'; 
+                remove.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#ff0000'; 
+                });
+                remove.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = 'lightgreen'; 
+                }); 
+                remove.onclick = function() {
+                    if (quantitytango > 0) {
+                        quantitytango--; 
+                        productName.textContent = `Tango Time - Price:$9.99 - ${quantitytango}`;
+                        if (quantitytango === 0) {
+                            cartFlexBox.remove();
+                        }
+                    }
+                };
+
+                cartFlexBox.append(remove);
+
+                var footer = document.getElementById('footer');
+                footer.parentNode.insertBefore(cartFlexBox, footer);
+            } else {
+                // Increase quantity only if cartFlexBox already exists
+                quantitytango++;
+                productName = document.getElementById('tango').querySelector('p');
+                productName.textContent = `Tango Time - Price:$9.99 - ${quantitytango}`;
+            }
+        }
+
+        //Create cart function for Berry
+        function berryCartDisplay() {
+            var cartFlexBox = document.getElementById('berry');
+            var productName;
+
+            if (!cartFlexBox) {
+                cartFlexBox = document.createElement('div');
+
+                //Flexbox styling
+                cartFlexBox.style.display = 'flex';
+                cartFlexBox.style.gap = '20px';
+                cartFlexBox.style.justifyContent = 'center';
+                cartFlexBox.style.flexWrap = 'wrap';
+                cartFlexBox.style.padding = '10px';
+                cartFlexBox.style.backgroundColor = 'lightgray';
+
+                productName = document.createElement('p');
+                productName.textContent = `Berry Special - Price:$9.99 - ${quantityberry}`;
+                cartFlexBox.appendChild(productName);
+                cartFlexBox.id = 'berry';
+
+                var remove = document.createElement('button');
+                remove.textContent = 'Remove';
+                remove.style.padding = '5px 10px'; 
+                remove.style.backgroundColor = 'lightgreen'; 
+                remove.style.color = 'white'; 
+                remove.style.border = 'none'; 
+                remove.style.borderRadius = '5px'; 
+                remove.style.fontSize = '12px'; 
+                remove.style.cursor = 'pointer'; 
+                remove.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#ff0000'; 
+                });
+                remove.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = 'lightgreen'; 
+                }); 
+                remove.onclick = function() {
+                    if (quantityberry > 0) {
+                        quantityberry--; 
+                        productName.textContent = `Berry Special - Price:$9.99 - ${quantityberry}`;
+                        if (quantityberry === 0) {
+                            cartFlexBox.remove();
+                        }
+                    }
+                };
+
+                cartFlexBox.append(remove);
+
+                var footer = document.getElementById('footer');
+                footer.parentNode.insertBefore(cartFlexBox, footer);
+            } else {
+                // Increase quantity only if cartFlexBox already exists
+                quantityberry++;
+                productName = document.getElementById('berry').querySelector('p');
+                productName.textContent = `Berry Special - Price:$9.99 - ${quantityberry}`;
+            }
+        }
+
+        //Create cart function for plain 
+        function plainCartDisplay() {
+            var cartFlexBox = document.getElementById('plain');
+            var productName;
+
+            if (!cartFlexBox) {
+                cartFlexBox = document.createElement('div');
+
+                //Flexbox styling
+                cartFlexBox.style.display = 'flex';
+                cartFlexBox.style.gap = '20px';
+                cartFlexBox.style.justifyContent = 'center';
+                cartFlexBox.style.flexWrap = 'wrap';
+                cartFlexBox.style.padding = '10px';
+                cartFlexBox.style.backgroundColor = 'lightgray';
+
+                productName = document.createElement('p');
+                productName.textContent = `Le plain - Price:$9.99 - ${quantityplain}`;
+                cartFlexBox.appendChild(productName);
+                cartFlexBox.id = 'plain';
+
+                var remove = document.createElement('button');
+                remove.textContent = 'Remove';
+                remove.style.padding = '5px 10px'; 
+                remove.style.backgroundColor = 'lightgreen'; 
+                remove.style.color = 'white'; 
+                remove.style.border = 'none'; 
+                remove.style.borderRadius = '5px'; 
+                remove.style.fontSize = '12px'; 
+                remove.style.cursor = 'pointer'; 
+                remove.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#ff0000'; 
+                });
+                remove.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = 'lightgreen'; 
+                }); 
+                remove.onclick = function() {
+                    if (quantityplain > 0) {
+                        quantityplain--; 
+                        productName.textContent = `Le plain - Price:$9.99 - ${quantityplain}`;
+                        if (quantityplain === 0) {
+                            cartFlexBox.remove();
+                        }
+                    }
+                };
+
+                cartFlexBox.append(remove);
+
+                var footer = document.getElementById('footer');
+                footer.parentNode.insertBefore(cartFlexBox, footer);
+            } else {
+                // Increase quantity only if cartFlexBox already exists
+                quantityplain++;
+                productName = document.getElementById('plain').querySelector('p');
+                productName.textContent = `Le plain - Price:$9.99 - ${quantityplain}`;
+            }
+        }
+    </script>
+    <footer id="footer" class="index-footer">
         <!-- Copyright notice goes here -->
         <p>
             © Paidionerastas All Rights Reserved. 
